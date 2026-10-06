@@ -1,0 +1,11 @@
+{
+  "query": "cotton t-shirt",
+  "max_price": "60",
+  "currency": "ILS",
+  "pages": 1,
+  "urls": [
+    "https://www.ebay.com/itm/188581370904",
+    "https://www.ebay.com/itm/174951959939",
+    "https://www.ebay.com/itm/389997488034"
+  ]
+}

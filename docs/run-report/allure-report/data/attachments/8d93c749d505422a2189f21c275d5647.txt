@@ -1,0 +1,1 @@
+WARNING  ebay_automation.core.bot_guard:bot_guard.py:125 eBay 'Error Page' - reload 1/1 in 0s

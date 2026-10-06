@@ -1,0 +1,53 @@
+# Default settings. Overridden by config/profiles/<ENV>.yaml, then by EBAY_* env vars
+# (nested keys use "__", e.g. EBAY_BROWSER__HEADLESS=false).
+base_url: https://www.ebay.com
+cart_url: https://cart.ebay.com
+# Currency eBay shows for your location. Prices in other currencies are skipped.
+currency: ILS
+random_seed: 42                 # for reproducible variant picks (null = random)
+data_file: data/search_cases.yaml
+# When eBay shows a captcha / block page:
+#   wait - wait up to bot_challenge_wait_s for you to solve it in the browser window
+#   skip - mark the test as skipped
+#   fail - fail the test
+bot_challenge_action: wait
+bot_challenge_wait_s: 120
+bot_challenge_auto_clear_s: 20  # the challenge page usually clears by itself
+bot_block_reload_retries: 2     # retries on the "Something went wrong" page
+
+browser:
+  # eBay blocks headless browsers and Playwright's bundled Chromium, so use headed Chrome.
+  headless: false
+  channel: chrome               # installed Google Chrome
+  slow_mo: 0
+  min_navigation_interval_ms: 2000   # minimum gap between page loads
+  locale: en-US
+  timeout_ms: 15000
+  navigation_timeout_ms: 30000
+  viewport_width: 1440
+  viewport_height: 900
+
+auth:
+  mode: guest                   # guest | storage_state | credentials
+  storage_state_path: auth/storage_state.json   # logged-in session (mode=storage_state)
+  session_state_path: auth/session.json         # guest session, loaded when present
+  # username / password are read from env only: EBAY_AUTH__USERNAME / EBAY_AUTH__PASSWORD
+
+search:
+  # false: open the search URL directly (fewer page loads)
+  # true:  type the query into the header search box
+  use_header_search: false
+  use_ui_price_filter: true     # use the price filter on the page, else URL params
+  buy_it_now_only: true         # auctions have no "Add to cart"
+  max_pages: 5
+  range_price_strategy: max     # for price ranges: compare the max or the min price
+
+cart:
+  # items = "Items (N)" line (item prices only), subtotal = "Subtotal" line (includes shipping)
+  compare_field: items          # items | subtotal
+  clear_before_test: true       # only used when a saved session is loaded
+
+artifacts:
+  screenshots_dir: reports/screenshots
+  traces_dir: reports/traces
+  tracing: true

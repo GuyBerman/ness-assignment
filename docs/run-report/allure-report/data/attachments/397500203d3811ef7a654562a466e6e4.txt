@@ -1,0 +1,39 @@
+INFO     ebay_automation.utils.reporter:reporter.py:22 STEP: Authenticate (mode=guest)
+INFO     ebay_automation.core.base_page:base_page.py:39 Open https://www.ebay.com/
+INFO     ebay_automation.flows.auth_flow:auth_flow.py:45 Continuing as guest
+INFO     ebay_automation.utils.reporter:reporter.py:22 STEP: Empty cart before test
+INFO     ebay_automation.core.base_page:base_page.py:39 Open https://cart.ebay.com
+INFO     ebay_automation.utils.reporter:reporter.py:22 STEP: Search "eastlake brass doorknob 1890 patent pair original box" with price <= ILS 120 (limit 5)
+INFO     ebay_automation.utils.reporter:reporter.py:22 STEP: Open search results (LH_BIN=1)
+INFO     ebay_automation.core.base_page:base_page.py:39 Open https://www.ebay.com/sch/i.html?_nkw=eastlake+brass+doorknob+1890+patent+pair+original+box&LH_BIN=1
+INFO     ebay_automation.utils.reporter:reporter.py:22 STEP: Filter: UI price max=120
+INFO     ebay_automation.utils.reporter:reporter.py:22 STEP: Scan results page 1
+INFO     ebay_automation.flows.search_flow:search_flow.py:126 Match 158044384722 | ILS 106.95 | Eastlake Style Ornate Brass Bronze Doorknob Lot 5
+INFO     ebay_automation.flows.search_flow:search_flow.py:126 Match 372664608943 | ILS 88.61 | BRASS DOOR KNOB EASTLAKE CAST BRASS VICTORIAN EAST LAKE orig
+INFO     ebay_automation.flows.search_flow:search_flow.py:126 Match 366515096837 | ILS 106.95 | Eastlake Style Ornate Brass Bronze Doorknob Lot 3
+INFO     ebay_automation.flows.search_flow:search_flow.py:126 Match 257727955811 | ILS 91.67 | cast eastlake doorknob
+INFO     ebay_automation.flows.search_flow:search_flow.py:126 Match 227124458567 | ILS 73.33 | ORNATE DOORKNOB BROWN SWARL PORCELIN VICTORIAN EAST LAKE ori
+INFO     ebay_automation.flows.search_flow:search_flow.py:127 Page scanned: 5 cards, 5 matched, 5 total
+INFO     ebay_automation.flows.search_flow:search_flow.py:83 Found 5/5 items under ILS 120
+INFO     ebay_automation.utils.reporter:reporter.py:22 STEP: [1/5] Add item 158044384722 to cart
+INFO     ebay_automation.core.base_page:base_page.py:39 Open https://www.ebay.com/itm/158044384722
+INFO     ebay_automation.core.base_page:base_page.py:61 Screenshot saved: /Users/guyberman/projects/ness-project/reports/screenshots/01_added_158044384722.png
+INFO     ebay_automation.utils.reporter:reporter.py:22 STEP: [2/5] Add item 372664608943 to cart
+INFO     ebay_automation.core.base_page:base_page.py:39 Open https://www.ebay.com/itm/372664608943
+INFO     ebay_automation.core.base_page:base_page.py:61 Screenshot saved: /Users/guyberman/projects/ness-project/reports/screenshots/02_added_372664608943.png
+INFO     ebay_automation.utils.reporter:reporter.py:22 STEP: [3/5] Add item 366515096837 to cart
+INFO     ebay_automation.core.base_page:base_page.py:39 Open https://www.ebay.com/itm/366515096837
+INFO     ebay_automation.core.base_page:base_page.py:61 Screenshot saved: /Users/guyberman/projects/ness-project/reports/screenshots/03_added_366515096837.png
+INFO     ebay_automation.utils.reporter:reporter.py:22 STEP: [4/5] Add item 257727955811 to cart
+INFO     ebay_automation.core.base_page:base_page.py:39 Open https://www.ebay.com/itm/257727955811
+INFO     ebay_automation.core.base_page:base_page.py:61 Screenshot saved: /Users/guyberman/projects/ness-project/reports/screenshots/04_added_257727955811.png
+INFO     ebay_automation.utils.reporter:reporter.py:22 STEP: [5/5] Add item 227124458567 to cart
+INFO     ebay_automation.core.base_page:base_page.py:39 Open https://www.ebay.com/itm/227124458567
+INFO     ebay_automation.core.base_page:base_page.py:61 Screenshot saved: /Users/guyberman/projects/ness-project/reports/screenshots/05_added_227124458567.png
+INFO     ebay_automation.flows.cart_flow:cart_flow.py:66 Added 5/5 items
+INFO     ebay_automation.utils.reporter:reporter.py:22 STEP: Assert cart contains the 5 added items
+INFO     ebay_automation.core.base_page:base_page.py:39 Open https://cart.ebay.com
+INFO     ebay_automation.utils.reporter:reporter.py:22 STEP: Assert cart items <= 120 x 5 = 600
+INFO     ebay_automation.core.base_page:base_page.py:39 Open https://cart.ebay.com
+INFO     ebay_automation.flows.cart_flow:cart_flow.py:99 Cart items ILS 467.51 <= 600
+INFO     ebay_automation.core.base_page:base_page.py:61 Screenshot saved: /Users/guyberman/projects/ness-project/reports/screenshots/cart_page.png

@@ -1,0 +1,4 @@
+# Local runs: visible browser, slightly slowed down.
+browser:
+  headless: false
+  slow_mo: 100

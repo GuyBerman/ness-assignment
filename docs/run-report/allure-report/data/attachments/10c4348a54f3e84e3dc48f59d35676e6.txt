@@ -1,0 +1,2 @@
+WARNING  ebay_automation.core.bot_guard:bot_guard.py:137 eBay challenge page - waiting up to 20s for it to clear
+INFO     ebay_automation.core.bot_guard:bot_guard.py:143 Challenge cleared by itself - continuing

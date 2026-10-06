@@ -1,0 +1,7 @@
+# CI: runs headed Chrome under xvfb. Runners are in the US, so prices are in USD.
+currency: USD
+bot_challenge_action: skip
+browser:
+  headless: false
+  timeout_ms: 25000
+  navigation_timeout_ms: 45000

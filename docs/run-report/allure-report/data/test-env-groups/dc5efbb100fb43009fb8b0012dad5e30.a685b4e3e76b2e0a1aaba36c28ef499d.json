@@ -1,0 +1,1 @@
+{"id":"dc5efbb100fb43009fb8b0012dad5e30.a685b4e3e76b2e0a1aaba36c28ef499d","fullName":"tests.unit.test_bot_guard#test_invisible_recaptcha_on_normal_page_is_not_a_challenge","name":"test_invisible_recaptcha_on_normal_page_is_not_a_challenge[chromium]","status":"passed","testResultsByEnv":{"default":"b0272b96c625a940de8dfef6979e8bab"}}

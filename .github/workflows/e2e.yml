@@ -1,0 +1,47 @@
+name: tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      ENV: ci
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install
+        run: |
+          pip install -e ".[dev]"
+          python -m playwright install --with-deps chrome
+
+      - name: Lint
+        run: ruff check . && ruff format --check .
+
+      - name: Unit tests
+        run: pytest tests/unit -m unit
+
+      # eBay blocks headless browsers, so run headed Chrome on a virtual display.
+      - name: E2E tests
+        run: xvfb-run --auto-servernum pytest tests/e2e -m e2e
+        continue-on-error: true
+
+      - name: Allure HTML report
+        if: always()
+        run: npx --yes allure-commandline generate reports/allure-results --clean -o reports/allure-report
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: reports
+          path: reports/

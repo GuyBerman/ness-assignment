@@ -1,0 +1,13 @@
+{
+  "query": "shoes",
+  "max_price": "220",
+  "currency": "ILS",
+  "pages": 1,
+  "urls": [
+    "https://www.ebay.com/itm/178064614857",
+    "https://www.ebay.com/itm/178275474822",
+    "https://www.ebay.com/itm/178275425028",
+    "https://www.ebay.com/itm/234426338183",
+    "https://www.ebay.com/itm/257783712713"
+  ]
+}
